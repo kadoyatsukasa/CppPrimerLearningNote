@@ -414,16 +414,21 @@ decltype(odd) &addPtr(int i){
   > 重复声明了， 
 
   2) 
-     ```c++
+   ```c++
     int get();
     double get();
-    ```
+   ```
   > 返回一个double值  
 
   3) 
-     ```c++
-       int *reset(int*);
-        double* reset(double*); 
-     ```
+   ```c++
+    int *reset(int*);
+    double* reset(double*); 
+   ```
   > 重置一个double数组 
 
+
+### 6.5.1节练习  
+**6.40 下面哪个声明是错误的？为什么？**  
+  1. `int ff(int a,int b= 0,int c = 0);`  
+  2. `char *init(int ht = 24,int wd,char bckrnd);`
