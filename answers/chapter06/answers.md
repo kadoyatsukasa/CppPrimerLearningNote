@@ -60,3 +60,4 @@ uint64_t rfact(uint64_t val) {
 ```  
 
 **6.5 编写一个函数，求一个数的绝对值**  
+[例程](src/testABS.cpp)
