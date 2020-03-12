@@ -224,5 +224,23 @@ string convertToLower(string& source) {
 double calc(double);
 int count(const string&,char);
 int sum(vector<int>::iterator,vector<int>::iterator,int);
+vector<int> vec(10);
+```  
+  a) calc(23.4,55.1);  
+        
+   > 不合法，因为函数只接受一个参数  
+        
+  b) count("abcda",'a');
+   
+   >  合法  
+   
+  c) calc(66);
+   
+   > 合法  
 
-```
+  d) sum(vec.begin(),vec.end(),3.8);  
+   > 不合法，第二个参数接受的是int值而不是double值  
+ 
+**6.20 引用形参什么时候应该是常量引用？如果形参应该是常量引用,而我们将其设为了普通引用,会发生什么情况？**  
+  > 如果这个引用不应该修改原有的对象，就需要设置为常量引用
+  > 如果将其设置为了普通引用，那么操作将会修改原有对象  
