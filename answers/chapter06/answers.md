@@ -394,3 +394,36 @@ int factorial(int val){
   >  decltype(strT) &fun();
   >```
 
+**6.38 修改arrPtr函数，使其返回数组的引用**  
+```c++
+int odd[]={1,3,5,7,9};
+int even[]={0,2,4,6,8};
+
+decltype(odd) &addPtr(int i){
+    return （i%2)? odd:even;
+}
+```  
+
+### 6.4节练习
+**6.39 说明在下面的每组声明中第二条声明语句是何含义。如果有非法的声明,请指出来**  
+  1) 
+   ```c++ 
+    int calc(int,int);
+    int calc(const int,const int);    
+   ```  
+  > 重复声明了， 
+
+  2) 
+     ```c++
+    int get();
+    double get();
+    ```
+  > 返回一个double值  
+
+  3) 
+     ```c++
+       int *reset(int*);
+        double* reset(double*); 
+     ```
+  > 重置一个double数组 
+
