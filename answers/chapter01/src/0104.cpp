@@ -7,7 +7,7 @@ int main(int argc, char const *argv[])
 {
     int first;
     int second;
-    cout<<"Enter two intengers"<<endl;
+    cout<<"Enter two integers"<<endl;
     cin>>first>>second;
     cout<<first<<"*"<<second<<"="<<first*second<<endl;
 
