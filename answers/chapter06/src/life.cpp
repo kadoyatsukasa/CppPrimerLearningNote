@@ -7,16 +7,16 @@ using std::endl;
 void life(int param) {
 	static int localStaticVal=2;
 	int val=3;
-	cout << "ÐÎ²Î" << param << endl;
-	cout << "¾Ö²¿±äÁ¿" << val<<endl;
-	cout << "¾²Ì¬¾Ö²¿±äÁ¿" << localStaticVal << endl;
+	cout << "å½¢å‚" << param << endl;
+	cout << "å±€éƒ¨å˜é‡" << val<<endl;
+	cout << "é™æ€å±€éƒ¨å˜é‡" << localStaticVal << endl;
 }
 
 int main() {
 
-	cout << "life()º¯Êý¿ªÊ¼" << endl;
+	cout << "life()å‡½æ•°å¼€å§‹" << endl;
 	life(1);
-	cout << "life()º¯Êý½áÊø" << endl;
+	cout << "life()å‡½æ•°ç»“æŸ" << endl;
 	//cout << localStaticVal << endl;
 	
 	return 0;

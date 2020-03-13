@@ -7,7 +7,7 @@ uint64_t fact(uint64_t val);
 
 int main() {
 	uint64_t num;
-	cout << "ÊäÈëÒ»¸öÕûÊı:" << endl;
+	cout << "è¾“å…¥ä¸€ä¸ªæ•´æ•°:" << endl;
 	cin >> num;
 	cout << num << "! = " << fact(num) << endl;
 	return 0;

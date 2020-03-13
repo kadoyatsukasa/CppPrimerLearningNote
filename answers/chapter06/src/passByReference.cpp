@@ -3,7 +3,7 @@ using std::cout;
 using std::cin;
 using std::endl;
 
-//´«ÒıÓÃ
+//ä¼ å¼•ç”¨
 void reset(int& num) {
 	
 	num = 0;
@@ -11,9 +11,9 @@ void reset(int& num) {
 
 int main() {
 	int num;
-	cout<<"ÊäÈëÕûÊı"<<endl;
+	cout<<"è¾“å…¥æ•´æ•°"<<endl;
 	cin >> num;
-	cout << "ÖÃÁã" << endl;
+	cout << "ç½®é›¶" << endl;
 	reset(num);
 	cout << num << endl;
 	return 0;

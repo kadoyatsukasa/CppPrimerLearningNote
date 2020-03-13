@@ -5,10 +5,10 @@ using std::cin;
 using std::endl;
 
 //  [3/12/2020 Erik]
-//½»»»Á½¸öÖ¸Õë
+//äº¤æ¢ä¸¤ä¸ªæŒ‡é’ˆ
 //
-//	@param first µÚÒ»¸öÖ¸Õë
-//	@param second µÚ¶ş¸öÖ¸Õë
+//	@param first ç¬¬ä¸€ä¸ªæŒ‡é’ˆ
+//	@param second ç¬¬äºŒä¸ªæŒ‡é’ˆ
 void swap_ptr(int *&first, int *&second) {
 	int* temp;
 	temp = first;
@@ -22,21 +22,21 @@ int main() {
 	int* first_ptr = &first;
 	int* second_prt = &second;
 
-	cout << "ÊäÈëÁ½¸öÊı" << endl;
+	cout << "è¾“å…¥ä¸¤ä¸ªæ•°" << endl;
 	cin >> first >> second;
 	cout << endl;
 
-	//³õÊ¼Öµ
+	//åˆå§‹å€¼
 	cout << "first = " << first << " , second = " << second << endl;
 	cout << "*first_ptr = " << *first_ptr << " , *second_ptr = " << *second_prt << endl;
 	cout << "first_ptr =" << first_ptr << " , second_ptr = " << second_prt << endl;
 	cout << "&first = " << &first << " , &second = " << &second << endl;
 	cout << endl;
 
-	cout << "½»»»Î»ÖÃ" << endl;
+	cout << "äº¤æ¢ä½ç½®" << endl;
 	swap_ptr(first_ptr, second_prt);
 	
-	//ÑéÖ¤
+	//éªŒè¯
 	cout <<"first = " <<first<<" , second = " << second<<endl;
 	cout <<"*first_ptr = "<<*first_ptr <<" , *second_ptr = " <<*second_prt << endl;
 	cout << "first_ptr =" << first_ptr << " , second_ptr = " << second_prt << endl;

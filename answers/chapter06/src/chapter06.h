@@ -1,4 +1,5 @@
 #pragma once
+#include<iostream>
 
 //6.3
 uint64_t fact(uint64_t val);

@@ -10,11 +10,11 @@ double myABS(double);
 int main() {
 	double num;
 
-	cout << "ÊäÈëÒ»¸öÊý×Ö" << endl;
+	cout << "è¾“å…¥ä¸€ä¸ªæ•°å­—" << endl;
 	cin >> num;
 
-	cout << "¿âº¯Êýabs()Çó¾ø¶ÔÖµ " << abs(num) << endl;
-	cout << "×Ô¶¨ÒåmyABS()Çó¾ø¶ÔÖµ " << myABS(num) << endl;
+	cout << "åº“å‡½æ•°abs()æ±‚ç»å¯¹å€¼ " << abs(num) << endl;
+	cout << "è‡ªå®šä¹‰myABS()æ±‚ç»å¯¹å€¼ " << myABS(num) << endl;
 
 	return 0;
 }
