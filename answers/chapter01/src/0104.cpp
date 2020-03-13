@@ -10,6 +10,7 @@ int main(int argc, char const *argv[])
     cout<<"Enter two intengers"<<endl;
     cin>>first>>second;
     cout<<first<<"*"<<second<<"="<<first*second<<endl;
-    
+
     return 0;
 }
+
