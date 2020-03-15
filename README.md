@@ -5,4 +5,4 @@
 
 ### [第1章 开始](answers/chapter01/chapter01.md)  
 ### [第2章 变量和基本类型](answers/chapter02/chapter02.md)  
-### [第6章 函数](answers/chapter06/answers.md)   
+### [第6章 函数](answers/chapter06/chapter06.md)   
