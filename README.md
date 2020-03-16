@@ -8,7 +8,7 @@
 
 #### [第1章 开始](answers/part01/chapter01/chapter01.md)  
 #### [第2章 变量和基本类型](answers/part01/chapter02/chapter02.md)  
-#### [第6章 函数](answers/part01/chapter06.md)   
+#### [第6章 函数](answers/part01/chapter06/chapter06.md)   
 
 ### 第二部分 C++标准库
 
