@@ -10,8 +10,8 @@
         |fstream|ifstream,wifstream 从文件读取数据<br/> ofstream,wostream 向文件写入数据<br/> fstream,wfstream 读写文件|
         |sstream|istringstream,wistringstream 从string读取数据<br/>ostringstream,wostringstream 向string写入数据<br/>stringstream,wstringstream 读写string|
         |||
-
-
+    - IO对象无拷贝或赋值  
+    
     - IO库条件状态  
         |||
         |:---:|:---:|
@@ -31,4 +31,12 @@
         |||
 + 练习:
     - **8.1 编写函数,接收一个istream& 参数,返回值类型也是istream& 类型.此函数须从给定流中读取数据,直到遇到文件结束标识时停止.它将读取的数据输出到标准输出上.完成这些操作后,在返回流之前,对流进行复位,使其处于有效状态.**  
-    
+    - **8.2 测试函数,参数为cin**  
+    [0801](src/0801.cpp)  
+
+    - **8.3 什么情况下,下面的while循环会终止**  
+    ```c++
+    while(cin>>i)
+    //...
+    ```
+    > 当输入流遇到结束信号的时候,while循环就会停止  
