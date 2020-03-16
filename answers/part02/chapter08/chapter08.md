@@ -68,3 +68,31 @@
     |`fstrm.is_open()`|返回一个bool值,指出与fstrm关联的文件是否成功打开且尚未关闭|
 
 + 练习  
+    **8.4 编写函数,以读模式打开一个文件,将其内容读入一个string的vector中,将每一行作为一个独立的元素存于vector中**  
+    ```c++
+    // 从指定文件读取字符串并存放到vector中
+    // @param filePath 指定文件的路径
+    // @return 返回存储的容器
+    vector<string> readFileToVector(string filePath){
+        vector<string> fileString;
+        string text;
+        ifstream input(filePath); //建立文件关联
+        input.open(filePath,ios_base::in); //以读的形式打开指定文件
+
+
+    //如果没有达到文件结尾
+    //就持续读文件
+        if(input){
+            while (!input.eof())
+            {
+                std::getline(input,text);
+                fileString.push_back(text); //将内容保存到vector之中
+            }
+        }
+    
+        fileString.pop_back();
+        input.close();
+        return fileString;
+    }
+    
+    ```
