@@ -11,6 +11,8 @@ using std::istringstream;
 using std::ostringstream;
 
 class PersonInfo{
+    friend void savePersonInfoAsVector(PersonInfo& info,vector<PersonInfo> pvect);
+    
     public:
     PersonInfo();
     PersonInfo(string,vector<string>);
@@ -18,12 +20,11 @@ class PersonInfo{
     inline void setName(string name){mName=name;}
     inline void setPhones(vector<string> phones){mPhones=phones;}
     string getName(){return mName;}
-    vector<string> getPhones(){return mPhones};
+    vector<string> getPhones(){return mPhones;}
+
 
     private:
     string mName;
     vector<string> mPhones;
-
 };
 
-vector<PersonInfo> savePersonInfoAsVector(PersonInfo info);
