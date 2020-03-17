@@ -67,6 +67,29 @@
     |`fstrm.close()`|关闭于fstrm绑定的文件,返回void|
     |`fstrm.is_open()`|返回一个bool值,指出与fstrm关联的文件是否成功打开且尚未关闭|
 
+    - 文件模式:
+
+    |||
+    |:---:|:---:|
+    |in|读文件|
+    |out|写文件|
+    |app|每次写前定位到文件末尾|
+    |ate|打开文件定位到文件末尾|
+    |trunc|截断文件|
+    |binary|以二进制方式进行IO|
+    |||
+
+    - 规则   
+        - 只能对`ofstream`或`fstream`对象设定`out`模式  
+        - 只能对`ifstream`或`fstream`对象设定`in`模式  
+        - 只有当out也被设定时才能设定trunc模式  
+        - 只要没设定trunc,就可以设定app模式.  
+          在app模式下,即使没有显示指定out模式,文件也总是以输出方式被打开  
+        - 默认情况下,即使我们没有指定trunc,以out模式打开的文件也会被截断.  
+            为了保留以out模式打开的文件的内容,我们必须同时指定app模式,这样只会将数据追加写到文件末尾,或者同时指定in模式,即打开文件同时进行读写操作  
+        - ate和binary模式可以用于任何类型的文件流对象,且可以与其他任何文件模式组合使用  
+
+
 + 练习  
     **8.4 编写函数,以读模式打开一个文件,将其内容读入一个string的vector中,将每一行作为一个独立的元素存于vector中**  
     ```c++
@@ -95,4 +118,61 @@
         return fileString;
     }
     
+    ```
+
+    **8.5 重写上面的程序,将没个单词作为一个杜立德元素进行存储**  
+    **8.6 重写书店程序,从一个文件中读取交易记录,将文件名作为一个参数传递给main**  
+    **8.7 修改书店程序,将结果保存到一个文件中.将输出文件名作为第二个参数传递给main函数**  
+    **8.8 修改上一题,将结果追加到文件莫问.对同一个输出文件,运行程序至少两次,季铵盐数据是否得以保**  
+
+## 8.3 String 流  
++ 知识点:  
+    - istringstream特有操作  
+    
+    |||
+    |:---:|:---:|
+    |`sstream strm;`|strm是一个未绑定的stringstream对象.<br>sstream是头文件sstream中定义的一个类型|
+    |`sstream strm(s)`|strm是一个sstream对象,保存string s的一个拷贝.此构造函数是explicit的|
+    |`strm.str()`|返回strm所保存的string的拷贝|
+    |`strm.str(s)`|将string s拷贝到strm中.返回void|
+    |||
+
+    - 使用istringstream  
+
+    ```c++
+        /**
+         * 程序读取文件,并创建一个PersonInfo的vector用于保存文件
+        */
+
+        string line,word;                       //分别保存来自输入的一行和单词
+        vector<PersonInfo> people;              //保存来自输入的所有记录
+        
+         //逐行从输入读取数据,直至cin遇到文件尾或者其他错误
+        while(getline(cin,line)){
+            PersonInfo info;                    //创建一个保留此记录数据的对象
+            istringstream record(line);         //将记录绑定到刚输入的行
+            record>>info.name;                  //读取姓名
+            while(record>>word)                 //读取电话记录
+                info.phones.push_back(word);    //保存电话记录
+            people.push_back(info);             //将记录追加到people末尾
+        }
+    ```  
+
+    - 使用ostringstring
+
+    ```c++
+    for(const auto& entry:people){
+        ostringstream formatted,badNums;
+        for(const auto &nums:entry.phones){
+            if(!valid(nums)){
+                badNums<<" "<<nums;
+            }else
+                formatted<<" "<<format(nums);
+        }
+        if(badNums.str().empty())
+            os<<entry.name<<" "<<formatted.str()<<endl;
+        else
+            cerr<<"input error: "<<entry.name
+                <<" invalid number(s)"<<badNums.str()<<endl;
+    }
     ```
