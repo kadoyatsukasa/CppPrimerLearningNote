@@ -6,10 +6,29 @@
 ### 第一部分 基础
     20200315--因为以前看完了C++ primer plus 了,这一部分近期就不进行重复学习了,先摸了,以后再更新
 
-#### [第1章 开始](answers/part01/chapter01/chapter01.md)  
-#### [第2章 变量和基本类型](answers/part01/chapter02/chapter02.md)  
-#### [第6章 函数](answers/part01/chapter06/chapter06.md)   
+#### [第1章 开始](book/part01/chapter01/chapter01.md)  
+#### [第2章 变量和基本类型](book/part01/chapter02/chapter02.md)  
+#### 第3章 字符串、向量和数组  
+#### 第4章 表达式  
+#### 第5章 语句
+#### [第6章 函数](book/part01/chapter06/chapter06.md)   
+#### 第7章 类
 
 ### 第二部分 C++标准库
+#### [第8章 IO库](book/part02/chapter08/chapter08.md)  
+#### 第9章 顺序容器  
+#### 第10章 泛型算法  
+#### 第11章 关联容器  
+#### 第12章 动态内存  
 
-#### [第8章 IO库](answers/part02/chapter08/chapter08.md)
+
+### 第三部分 类设计者工具
+#### 第13章 拷贝控制  
+#### 第14章 重载运算与类型转换  
+#### 第15章 面向对象程序设计  
+#### 第16章 模板与泛型编程  
+
+###  第四部分 高级主题
+#### [第17章 标准库特殊设施](book/part04/chapter17.md)  
+#### 第18章 用于大型程序的工具  
+#### 第19章 特殊工具与技术  
