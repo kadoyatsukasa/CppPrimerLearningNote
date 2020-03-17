@@ -2,7 +2,7 @@
 #include<vector>
 #include<string>
 #include<sstream>
-#include"person.h"
+#include"personInfo.h"
 
 using std::cout;
 using std::cin;
