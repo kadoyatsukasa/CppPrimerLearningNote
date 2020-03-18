@@ -1,4 +1,5 @@
-#pragma once
+#ifndef _PERSON_INFO_H_
+#define _PERSON_INFO_H_
 
 #include<iostream>
 #include<sstream>
@@ -28,3 +29,4 @@ class PersonInfo{
     vector<string> mPhones;
 };
 
+#endif

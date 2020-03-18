@@ -44,4 +44,35 @@
     |setw(w)|读或写值的宽度为w个字符|
     |setbase(b)|将整数输出为b进制|
     |||
+
+    - 单字节底层IO操作  
+
+    |||
+    |:---:|:---:|
+    |`is.get(ch)`|从istream is 读取下一个字节存入字符ch中.返回is|
+    |`os.put(ch)`|将字符ch输出到ostream os,返回os|
+    |`is.get()`|将is的下一个字节作为int返回|
+    |`is.putback(ch)`|将字符ch放回is.返回is|
+    |`is.upget`|将is向后移动一个字节|
+    |`is.peek()`|将下一个字节作为int返回,单从不从流中删除它|
+    |||
+
+    - 多字节底层IO操作
     
+    |||
+    |:---:|:---:|
+    |`is.get(sink,size,delim)`|从is中读取最多size个字节,并保存在字符数组中.字符数组的起始由sink给出.<br/>读取过程中直至遇到字符delim或读取了size个字节或遇到文件结尾停止.|
+    |`is.getline(sink,size,delim`|读取并丢弃delim|
+    |`is.read(sink,size)`|读取最多size个字节,存入字符数组sink中.返回is|
+    |`is.gcount()`|返回上一个未格式化读取操作从is读取的字节数|
+    |`os.write(source,size)`|将字符数数组source中的size个字节写入os,返回os|
+    |`is.ignore(size,delim)`|读取并忽略最多size个字符,包括delim.<br/>与其他未格式化函数不同,ignore有默认参数,size默认值为1,delim的默认值为文件尾|
+
+    - istream和ostream类型通常不支持随机访问
+    - seek和tell函数
+
+    |||
+    |:---:|:---:|
+    |`tellg()`<br/>`tellp()`|返回一个输入流中或输出流中标记的当前位置|
+    |`seekg(pos)`<br/>`seekp(pos)`|在一个输入流或输出流中将标记从定位到给定的绝对地址.<br/>pos通常是前一个tellg或tellp的返回值|
+    |`seekp(off,from)`<br/>`seekg(off,from)`|在一个输入流或输出流中将标记定位到from之前或之后off个字符.<br/>from可以是下列值之一:<br/>beg,偏移量相当于流开始的位置<br/>cur,偏移量相当于流当前的位置<br/>end,偏移量相当于流结束的位置 |
