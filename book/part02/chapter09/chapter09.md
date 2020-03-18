@@ -84,12 +84,13 @@
         > 迭代器begin和end必须指向相同的容器.  
         > end可以与begin指向相同的位置,但不能指向begin之前的位置 
     
-    - **9.4 编写函数,接受一对指向vector<int>的迭代器和一个int值.在两个迭代器指定的范围中查找给定的值,返回一个bool来指出是否找到**
+    -  **9.4 编写函数,接受一对指向vector<int>的迭代器和一个int值. 在两个迭代器指定的范围中查找给定的值,返回一个bool来指出是否找到**
    
 
     ```c++
         bool FindTarget(
-            vector<int>::iterator begin,                       vector<int>::iterator end,
+            vector<int>::iterator begin,                       
+            vector<int>::iterator end,
             int target){
     
             while (begin!=end)
@@ -100,4 +101,48 @@
             return false;
         }
     ```
-    [完成程序](src/0904.cpp)
+    [完成程序](src/0904.cpp)  
+
+    - **9.5  重写上一题的函数,返回一个迭代器指向找到的元素.注意,程序必须处理未找到给定值的情况**  
+
+    - **9.6 下面的程序有何错误?如何修改?**
+    ```c++
+    list<int> list1;
+    list<int>::iterator iter1=lst1.begin(),iter2=lst1.end();
+    while(iter1<iter2)/**/
+    ```
+
+    > 应该改为 `while(iter!=iter2){iter++;/**/}`  
+
+    - **9.7 为了索引int的vector中的元素,应该使用什么类型?**
+    > `vector<int>::const_iterator`  
+    - **9.8 为了读取string的list中的元素,应该使用什么类型?如果写入list,又该使用什么类型?**  
+    > 读取元素可以用`list<string>::iterator`,写入可以用`list<string>::iterator `  
+
+    - **9.9 begin和cbegin两个函数有什么不同**  
+    > begin返回的是普通迭代器,cbegin返回的是const类型迭代器  
+
+    - **9.10 下面四个对象分别是什么类型?**  
+    ```c++
+    vector<int> v1;
+    const vector<int> v2;
+    auto it1 = v1.begin(),it2=v2.begin();
+    auto it3 = v1.cbegin(),it4=v2.cbegin();
+    ```
+    > v1,v3是 iterator
+    > v2,v4 是 const_iterator  
+
+    - **9.11 对6种创建和初始化vector对象的方法,每一种都给出一个实例.解释每个vector包含什么值**  
+    > `vector<int> first;` : 一个空容器 ,没有元素  
+    > `vector<int> second(first);` : 空容器,没有元素  
+    > `vector<int> third {1,2,3,4,5};` : 1,2,3,4,5  
+    > `vector<int> fourth={1,2,3,4,5};`: 1,2,3,4,5  
+    > `vector<int> fifth(4,10)`:10,10,10,10  
+
+    - **9.12 对于接受一个容器创建其拷贝的构造函数,和接受两个迭代器创建拷贝的构造函数,接受其不同**  
+    
+    - **9.13 如何从一个list<int>初始化一个vector<double>?从一个vector<int>又该如何创建?**  
+    [完整程序0913](src/0913.cpp)  
+    
+    - **9.14 编写程序,将一个list中的char* 指针元素赋值给一个vector中的string**  
+    
