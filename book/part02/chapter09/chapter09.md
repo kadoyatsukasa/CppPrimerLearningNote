@@ -146,3 +146,23 @@
     
     - **9.14 编写程序,将一个list中的char* 指针元素赋值给一个vector中的string**  
     
+## 9.3 顺序容器操作  
++ 知识点:
+    - 向顺序容器添加元素的操作  
+        > 这些操作会改变容器的大小;array不支持这些操作.  
+        > `forward_list`有专有版本的`insert`和`emplace`操作.  
+        > `forward_list`不支持`push_back`和`emplace_back`.  
+        > `vector`和`string`不支持`push_front`和`emplace_front`.  
+        
+    |||
+    |:---:|:---:|
+    |`c.push_back(t)`<br/>`c.emplace_back(args)`|在c的尾部创建一个值为t或由args创建的元素.<br/>返回void|
+    |`c.push_front(t)`<br/>`c.emplace_back(args)`|在c的头部创建一个值为t或由args创建的元素,<br/>返回void|
+    |`c.insert(p,t)`<br/>`c.emplace(p,args)`|在迭代器p指向的元素之前创建一个值为t或由args创建的元素.<br/>返回指向新添加的第一个元素的迭代器|
+    |`c.insert(p,n,t)`|在迭代器p指向的与阿苏之前插入n个值为t的元素,<br/>返回指向新添加的第一个元素的迭代器;<br/>若n==0,则返回p|
+    |`c.insert(p,b,e)`|将迭代器b和e指定范围内的元素插入到迭代器p指向的元素之前.<br/>b和e不能指向c中的元素.<br/>返回指向新添加的第一个元素的迭代器;若范围为空,则返回p|
+    |`c.insert(p,il)`|il是一个花括号包围的元素值列表.将这些给定值代入到迭代器p指向的元素之前.<br/>返回指向新添加的第一个元素的迭代器;<br/>若列表为空,则返回p|
+
+    - 向一个`vector`,`string`或`deque`插入元素会使所有指向容器的迭代器、引用和指针失效  
+    - **容器元素是拷贝**:当我们用一个对象来初始化容器是,或将一个对象插入到容器中,实际上放入容器的不是对象本身,而是对象值的一个拷贝  
+    
